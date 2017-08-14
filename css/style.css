@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Anonymous Pro", sans-serif;
+}
+
+
+/* main div */
+
+#counter {
+    background-color: #343F4F;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+#counter .counter-inner {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    left: 30%;
+    right: 30%;
+}
+
+#counter .counter-inner .count-down {
+    position: absolute;
+    background-color: #FC6D6D;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    animation-name: courtine;
+    animation-timing-function: linear;
+    animation-duration: 13s;
+}
+
+#counter .counter-inner::before {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    font-size: 8em;
+    transform: translate(-50%, -50%);
+    content: "";
+    animation-name: count-me;
+    animation-duration: 12s;
+    animation-timing-function: ease-out;
+    z-index: 1;
+}
+
+@keyframes count-me {
+    0% {
+        content: "10";
+    }
+    10% {
+        content: "9";
+    }
+    20% {
+        content: "8";
+    }
+    30% {
+        content: "7";
+    }
+    40% {
+        content: "6";
+    }
+    50% {
+        content: "5";
+    }
+    60% {
+        content: "4";
+    }
+    70% {
+        content: "3";
+    }
+    80% {
+        content: "2";
+    }
+    90% {
+        content: "1";
+    }
+    100% {
+        content: "Ready?";
+    }
+}
+
+#counter .counter-inner p {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    font-size: 8em;
+    transform: translate(-50%, -50%);
+    content: "";
+    z-index: 1;
+    animation: i-love-css 26s steps(1, end);
+}
+
+@keyframes i-love-css {
+    0% {
+        opacity: 0;
+    }
+    50%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes courtine {
+    0% {
+        top: 0;
+        height: 0;
+        background-color: #FC6D6D;
+    }
+    90% {
+        background-color: #FC6D6D;
+    }
+    100% {
+        bottom: 0;
+        height: 100%;
+        background-color: #343F4F;
+    }
+}
